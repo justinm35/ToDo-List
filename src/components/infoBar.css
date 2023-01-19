@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+.info--bar{
+    background-color:red;
+    width:35vw;
+    height:70vh;
+    background:linear-gradient(140deg, rgba(102,101,244,1) 0%, rgba(141,73,173,1) 91%);
+    border-radius: 0 25px 25px 0;
+    margin-top:5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    position: fixed;
+}
+.info--date{
+    font-family: 'Inter', sans-serif;
+    color:white;
+    font-weight: 300;
+    font-size:1.7rem;
+    margin:10% 0 0 2vw;
+}
+.info--hello{
+    font-family: 'Inter', sans-serif;
+    color:white;
+    font-weight: 400;
+    font-size:3.3rem;
+    margin:25% 1vw 0 2vw;
+}
+.info--hello > span {
+    font-weight:600 !important;
+}

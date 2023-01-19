@@ -1,0 +1,29 @@
+.input--box{
+    width:200px;
+    height:200px;
+    backdrop-filter: blur(3px);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 25px;
+    bottom:50%;
+    left:45%;
+    position: absolute;
+    z-index:5;
+    display: flex;
+    justify-content: center;
+    padding:50px;
+}
+
+.input-text{
+    width:100%;
+    padding:3px;
+    border-radius: 5px;
+    border: 2px solid rgb(167, 168, 180);
+    background-color: transparent;
+
+}
+.input-text-label{
+    font-family: 'Inter', sans-serif;
+    color:rgb(47, 47, 47);
+    font-weight: 500;
+    font-size:1.5rem;
+}
