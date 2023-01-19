@@ -6,7 +6,7 @@ export default function InfoBar(props) {
     return(
         <div className="info--bar">
             <p className="info--date">{date}</p>
-            <h2 className="info--hello"><span>Good Morning {props.userName},</span><br/> here is your new things list.</h2>
+            <h2 className="info--hello"><span>Good Night {props.userName},</span><br/> here is your new things list.</h2>
         </div>
     )
 }
