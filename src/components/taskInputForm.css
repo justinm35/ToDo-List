@@ -1,21 +1,26 @@
 .input--box{
-    width:200px;
-    height:200px;
+    width:30vw;
+    height:auto;
     backdrop-filter: blur(3px);
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    border-radius: 25px;
-    bottom:50%;
-    left:45%;
+    border-radius: 25px 25px 0 0;
     position: absolute;
     z-index:5;
     display: flex;
+    bottom:0;
     justify-content: center;
     padding:50px;
 }
 
 .input-text{
+    font-family: 'Inter', sans-serif;
+    color:rgb(65, 65, 65);
+    font-weight: 400;
+    font-size:1.5rem;
     width:100%;
-    padding:3px;
+    height:1.2rem;
+    padding:10px;
+    margin:0.3em 0 0.3em 0;
     border-radius: 5px;
     border: 2px solid rgb(167, 168, 180);
     background-color: transparent;
@@ -24,6 +29,18 @@
 .input-text-label{
     font-family: 'Inter', sans-serif;
     color:rgb(47, 47, 47);
+    font-weight: 400;
+    font-size:1.2rem;
+}
+.input-btn-add {
+    font-family: 'Inter', sans-serif;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color:rgb(47, 47, 47);
     font-weight: 500;
     font-size:1.5rem;
+    width: 30%;
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    margin:20px 0 0 auto;
 }

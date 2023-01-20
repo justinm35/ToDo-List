@@ -1,12 +1,13 @@
 .task--bar{
     width:62vw;
-    height:100vh;
+    height:100%;
     margin-left:auto;
     padding:0;
 }
 .task--add-btn{
     background:linear-gradient(140deg, rgba(102,101,244,1) 0%, rgba(141,73,173,1) 91%);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border:none;
     width:70px;
     height:70px;
     color:white;
@@ -62,4 +63,15 @@
     margin:1% 0 0 0;
     position: relative;
     width:100%;
+}
+li{
+    list-style: none;
+}
+.task--no-task{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color:rgb(166, 167, 179);
+    font-weight: 600;
+    font-size:2.5rem;
+    padding-top:40%;
 }
