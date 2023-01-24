@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
 .info--bar{
-    background-color:red;
     width:35vw;
     height:70vh;
     background:linear-gradient(140deg, rgba(102,101,244,1) 0%, rgba(141,73,173,1) 91%);
@@ -20,9 +19,40 @@
     font-family: 'Inter', sans-serif;
     color:white;
     font-weight: 400;
-    font-size:3.3rem;
-    margin:25% 1vw 0 2vw;
+    font-size: 5vmin;
+    margin:10vh 1vw 0 2vw;
 }
+.info--hello-textbox{
+    font-family: 'Inter', sans-serif;
+    color:white;
+    font-size: 5vmin;
+    font-weight:600 !important;
+    background-color: transparent;
+    border:none;
+    outline: none;
+    width:auto;
+}
+.info--hello-textbox:hover{
+    border-bottom: 3px solid white;
+}
+
 .info--hello > span {
     font-weight:600 !important;
+}
+@media only screen and (max-width: 768px){
+    .info--bar{
+        width:100%;
+        border-radius: 0 0px 25px 25px;
+        margin:0 0 5% 0;
+        height:23vh;
+    }
+    .info--date{
+        font-size:1.3rem;
+        margin: 5% 0 3vw 3%;
+    }
+    .info--hello{
+        font-size:1.9rem;
+        margin:0 0 0 3%;
+    } 
+    
 }

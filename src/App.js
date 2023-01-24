@@ -4,7 +4,8 @@ import TaskBar from './components/taskBar'
 
 function App() {
   return (
-    <div className="App">
+   
+    <div className="app">
         <InfoBar userName="Alan"/>
         <TaskBar />
     </div>

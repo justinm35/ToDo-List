@@ -1,7 +1,8 @@
 .task--bar{
     width:62vw;
-    height:100%;
+    height:auto;
     margin-left:auto;
+    margin-top:50px;
     padding:0;
 }
 .task--add-btn{
@@ -15,54 +16,83 @@
     border-radius: 50%;
     text-align: center;
     position: fixed;
-    margin:20px;
+    margin:1%;
     bottom:0;
     right:0;
+    z-index:5;
 }
-
+/*Task Bar*/
+.task--drag-icon{
+    position: relative;
+    margin:0 15px 0 auto;
+    top:23px;
+}
 .task--comp-box{
     background-color: rgb(255, 255, 255);
     display:flex;
+    height:auto;
     width:95%;
-    height:100px;
-    margin:30px auto 30px auto;
+    margin:20px auto 20px auto;
     box-shadow: 0 10px 30px rgba(#414856, 0.05);
     border-radius: 15px;
 }
 
-.task--comp-descriptions{
+.task--comp-checkbox{
+    position: relative;
+    top:8px;
+}
+.task--comp-content{
     display: flex;
     flex-direction: column;
-    height:50px;
-}
-
-.task--comp-checkbox{
-    width:20px;
-    margin:15px;
+    justify-content: flex-start;
 }
 .task--comp-title{
     font-family: 'Inter', sans-serif;
-    color:rgb(47, 47, 47);
+    color:#474748;
     font-weight: 500;
-    font-size:1.5rem;
-    margin:2% 0 0 0;
+    font-size:1.8rem;
+    margin:0;
     position: relative;
+    top:5px;
+    cursor: pointer;
+}
+.task--comp-title:hover{
+    color:rgb(123, 123, 123);
 }
 .task--comp-date{
     font-family: 'Inter', sans-serif;
     color:rgb(117, 117, 117);
     font-weight: 300;
     font-size:1rem;
-    margin: 1.5% 2% 0 auto;
+    margin:0 0 7% 0;
+    margin:10px 10px 10px 0;
+}
+.task--comp-category{
+    font-family: 'Inter', sans-serif;
+    color:rgb(39, 39, 39) !important;
+    font-weight: 400;
+    padding:2px 12px 2px 12px;
+    margin: 0 5px;
+    height:20px;
+    color:black;
+    border-radius: 15px;
+    display: inline;
+    position: relative;
+}
+.task--comp-priority{
+    display: inline;
 }
 .task--comp-desc{
     font-family: 'Inter', sans-serif;
     color:rgb(47, 47, 47);
     font-weight: 200;
     font-size:1rem;
-    margin:1% 0 0 0;
+}
+.task--comp-trash{
     position: relative;
-    width:100%;
+}
+ul{
+    padding: 0;
 }
 li{
     list-style: none;
@@ -72,6 +102,13 @@ li{
     font-family: 'Inter', sans-serif;
     color:rgb(166, 167, 179);
     font-weight: 600;
-    font-size:2.5rem;
+    font-size:3vw;
     padding-top:40%;
+}
+@media only screen and (max-width: 768px){
+    .task--bar{
+        width:100vw;
+        height:100%;
+        margin:24vh auto 0 auto;
+    }
 }
