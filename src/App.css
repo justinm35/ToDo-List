@@ -5,3 +5,17 @@
     }
     
 }
+
+.author{
+    position: fixed;
+    z-index:-2;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-self: center;
+    margin:0;
+    font-family: 'Inter', sans-serif;
+    font-size:1.1rem;
+    color:rgb(159, 159, 159);
+    font-weight: 300;
+}

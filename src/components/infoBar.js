@@ -9,11 +9,11 @@ export default function InfoBar(props) {
             {return "Good Morning "}
         else if(time >=12 && time <=18){return "Good Afternoon "}
         else if(time > 18 && time < 20){return "Good Evening " }
-        else{return "Hello "}} 
+        else{return "Hello! "}} 
     return(
         <div className="info--bar">
             <p className="info--date">{date}</p>
-            <h2 className="info--hello"><span>{greeting()}<input placeholder="Your Name" className="info--hello-textbox" type="text"></input></span><br/> here is your new things list.</h2>
+            <h2 className="info--hello"><span>{greeting()}</span><br/> Here is your new things list.</h2>
         </div>
     )
 }
