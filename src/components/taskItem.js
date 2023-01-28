@@ -10,6 +10,7 @@ import Chip from '@mui/material/Chip';
 import { IconButton } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import { pink,  } from '@mui/material/colors';
 
 
 export default function TaskComp(props) {
@@ -31,14 +32,15 @@ export default function TaskComp(props) {
                         <h1 className={`task--comp-title`} style={{textDecoration : props.checkedStatus ?'line-through' : 'none', opacity : props.checkedStatus ?'0.7' : '1'}}>{props.title}</h1>
                         <IconButton className="task--dropdown" onClick={() => setOpenState(!openState)} size="small">{openState? <ArrowDropDownIcon  fontSize="large"/> :<ArrowDropUpIcon  fontSize="large"/> }</IconButton>
                     </div>
-                    <div className="task--comp-info-box" > <p className="task--comp-date">{props.dueDate ? `Deadline: ${props.dueDate}` : "No Deadline"}</p>
-                    {props.priority != '' && <div className="task--comp-priority">{props.priority == 'High' ? '!!!' :  props.priority == 'Medium' ? '!!' : '!' } {props.priority}</div>}
-                        {props.categoryName.map((data) =>{ return(<Chip variant='outlined' color='secondary' className="task--tags"fontSize="medium" key={data.catId}label={data.name}/>)})}
+                    <div className="task--comp-info-box" >
+                        {props.categoryName.map((data) =>{ return(<Chip style={{backgroundColor: data.color, color: 'white'}} className="task--tags"fontSize="medium" key={data.catId}label={data.name}/>)})}
                     </div>
                 </div>
-                <div className="task--drag-icon"><ReorderIcon dragControls={dragControls} /></div> 
+                <div className="task--drag-icon"><ReorderIcon size="small"dragControls={dragControls} /></div> 
                 <motion.div className="task--comp-popup" animate={openState ? maximized : minimized}>
-                        <p className="task--comp-desc">{props.description}</p>
+                {props.priority != '' && <div className="task--comp-priority">{props.priority == 'High' ? '!!!' :  props.priority == 'Medium' ? '!!' : '!' } {props.priority}</div>}
+                <p className="task--comp-date">{props.dueDate ? `Deadline: ${props.dueDate}` : "No Deadline"}</p>
+                        <p className="task--comp-desc">{props.description}</p> 
                         <IconButton  size="large"className="task--comp-trash" onClick={() => props.handleDelete(props.items.id)}><DeleteIcon color="disabled"/></IconButton>
                      </motion.div>
         </Reorder.Item>
