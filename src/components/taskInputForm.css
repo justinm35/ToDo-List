@@ -6,9 +6,10 @@
     position: fixed;
     z-index:5;
     bottom:5.5%;
-    right:3%;
+    right:4%;
     margin-left:3%;
     padding:3% 0 0 0;
+    user-select: none;
 }
 form{
     display:flex;
@@ -78,6 +79,7 @@ form{
     font-weight: 500;
     font-size:1.5rem;
     border: none;
+    margin-top:20px;
     padding: 10px 10px 10px 10px;
     background: rgb(255, 255, 255);
     border-radius: 10px 10px 10px 10px;
@@ -98,9 +100,9 @@ form{
 @media only screen and (max-width: 768px){
     .input--box-left{
         width:auto;
-        flex-basis: 90%;
+        flex-basis: 80%;
     }
     .input--box-right{
-        flex-basis: 90%;
+        flex-basis: 80%;
     }
 }

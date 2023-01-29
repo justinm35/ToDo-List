@@ -23,7 +23,7 @@ import { purple, red, pink, orange, green, teal, blue, deepPurple, lightBlue, cy
 export default function TaskBar() {
     const [isFormVisible, setIsFormVisible] = React.useState(false);
     const [inputErrorState, setInputErrorState] = React.useState("")
-    const [categoryList, setCategoryList] = React.useState([{ catId:nanoid(3),color:"#66bb6a", name:'Home', state: false},{ catId:nanoid(3), color:"#ffa726", name:'Work',state: false}])
+    const [categoryList, setCategoryList] = React.useState([{ catId:nanoid(3),color:"#4fc3f7", name:'Home', state: false},{ catId:nanoid(3), color:"#f06292", name:'Work',state: false}])
     const [taskListData, setTaskListData] = React.useState([])
 
     // const handleDeleteCategory = (catToDelete) => () => {
@@ -32,9 +32,9 @@ export default function TaskBar() {
     const oldData = JSON.parse(window.localStorage.getItem('prev'))
     useEffect(() =>{
         if(oldData == null) {
-            setTaskListData([{id: nanoid(10), checkedStatus: false ,title: 'Pick up kids from school', description: 'Go pick up the kids from school @ 3:00pm', dueDate: '2023-04-01', priority: 'High', categoryName: [{ catId:nanoid(3),color:"#66bb6a", name:'Home', state: true}]},
-                            {id: nanoid(10), checkedStatus: true ,title: 'Open the worlds best To-Do web app', description: 'Yep, its this one... This is the best To-Do list web app!', dueDate: '' , priority: 'Medium', categoryName: [{ catId:nanoid(3),color:"#ffa726", name:'Work', state: true},{ catId:nanoid(3), color:'#4db6ac', name:'Fun',state: true}]},
-                            {id: nanoid(10), checkedStatus: false ,title: 'Delete these and start your own list!', description: 'Go ahead, delete these samples and play aroud with the app.', dueDate: 'Now' , priority: '', categoryName: [{ catId:nanoid(3),color:randomColor(), name:'Cool Stuff', state: true},{ catId:nanoid(3), color:'#4db6ac', name:'Fun',state: true}]} ])
+            setTaskListData([{id: nanoid(10), checkedStatus: false ,title: 'Pick up kids from school', description: 'Go pick up the kids from school @ 3:00pm', dueDate: '2023-04-01', priority: 'High', categoryName: [{ catId:nanoid(3),color:"#4fc3f7", name:'Home', state: true}]},
+                            {id: nanoid(10), checkedStatus: true ,title: 'Open the worlds best To-Do web app', description: 'Yep, its this one... This is the best To-Do list web app!', dueDate: '' , priority: 'Medium', categoryName: [{ catId:nanoid(3),color:"#f06292", name:'Work', state: true},{ catId:nanoid(3), color:'#ffb74d', name:'Fun',state: true}]},
+                            {id: nanoid(10), checkedStatus: false ,title: 'Delete these and start your own list!', description: 'Go ahead, delete these samples and play aroud with the app.', dueDate: 'Now' , priority: '', categoryName: [{ catId:nanoid(3),color:randomColor(), name:'Cool Stuff', state: true},{ catId:nanoid(3), color:'#ffb74d', name:'Fun',state: true}]} ])
         }else{
             setTaskListData(oldData)
         }
@@ -126,7 +126,8 @@ export default function TaskBar() {
                                        name="title"
                                        value={TaskListItem.title}
                                        onChange={handleChange}
-                                        // {[inputErrorState] === 'text' && error}
+                                        error={inputErrorState === "title" ? 'NoTitle' :  ''}
+                                        helperText={inputErrorState === "title" ? 'You need a task title.' :  ''}
                                        />
                             <TextField id="outlined-multiline-static"
                                        label="Description"
@@ -186,14 +187,13 @@ export default function TaskBar() {
                                         onDelete={() => changeCatStatus(data.catId)}
                                         deleteIcon={data.state ?<DoneIcon sx={{ color: green[500] }} />: <CloseIcon/> }
                                         // color={data.state ? red[500] : 'default'}
-                                        style={data.state ? {backgroundColor: data.color, color: 'white'} : {borderColor:data.color,color: data.color}}
+                                        style={data.state ? {backgroundColor: data.color, color: '#ffffff'} : {borderColor:data.color,color: data.color}}
                                         variant={data.state ? 'filled' : 'outlined'}
                                         />
                                 )})} 
                             </div>
 
                         </div>
-                            <h3 className="input-error-message">{inputErrorState}</h3>
                             <motion.button whileTap={{ scale:0.95}} className="input-btn-add">Add Task</motion.button>
                                         
                     </form>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 .task--bar{
     width:60vw;
     height:auto;
@@ -8,7 +9,8 @@
     position: relative;
 }
 .task--add-btn{
-    background:linear-gradient(140deg, rgba(102,101,244,1) 0%, rgba(141,73,173,1) 91%);
+    /* background:linear-gradient(140deg, rgba(102,101,244,1) 0%, rgba(141,73,173,1) 91%); */
+    background-color: #474748;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     border:none;
     width:70px;
@@ -21,15 +23,15 @@
     bottom:1.5%;
     right:1.5%;
     z-index:5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.task--add-btn-child{
-    margin-bottom: -16px;
-    margin-right: -2px;
-}
+
 /*Task Bar*/
 .task--drag-icon{
     position: absolute;
-    margin:27px 15px 0 auto;
+    margin:29px 15px 0 auto;
     right:0px;
     cursor:grab;
 }
@@ -63,7 +65,7 @@
 margin-top:4px !Important;
 }
 .task--comp-title{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color:#474748;
     font-weight: 500;
     font-size:1.8rem;
@@ -100,28 +102,51 @@ margin-top:4px !Important;
     color:rgb(62, 62, 62) !important;
     background-color: rgb(200, 199, 199);
     font-weight: 400;
-    padding:2px 12px 2px 12px;
+    padding:2px 5px 2px 5px;
     margin: 0 5px;
     height:20px;
     border-radius: 3px;
 }
-.task--comp-popup{
-    flex: 0 0 100%;
-    position: relative;
-    padding-left: 56px;
+.task--comp-subject{
+    margin:15px 0 15px 0;
+    display: flex;
 }
-.task--comp-desc{
+/* .task--comp-subject:nth-child(4){
+    max-width: 300px;
+} */
+.task--comp-subject>div:nth-child(1){
+    display: inline;
     font-family: 'Inter', sans-serif;
-    color:rgb(47, 47, 47);
-    font-weight: 200;
-    font-size:1rem;
-    margin: 5px 0 30px 0;
-    width:50%;
+    color:rgb(51, 50, 50) !important;
+    background-color: rgb(232, 232, 232);
+    font-weight: 500;
+    padding:2px 7px 2px 7px;
+    margin-right: 6px;
+    height:20px;
+    border-radius: 3px;
 }
+.task--comp-subject>div:nth-child(2){
+    display: inline;
+}
+.task--comp-subject>div>p{
+    font-family: 'Inter', sans-serif;
+    color:rgb(62, 62, 62) !important;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: justify !important;
+    margin:0;
+}
+
+.task--comp-popup{
+    flex: 0 0 80%;
+    padding-left: 56px;
+    padding-top:0px;
+}
+
 .task--comp-trash{
     position: absolute !important;
-    right:60px;
-    bottom:6px;
+    right:4px;
+    bottom:4px;
 }
 ul{
     padding: 0;
@@ -159,5 +184,10 @@ li{
     }
     .task--comp-title{
         max-width: 60vw;
+        font-size:1.3rem;
+        top:10px;
+    }
+    .task--comp-popup{
+    padding-left:25px;
     }
 }

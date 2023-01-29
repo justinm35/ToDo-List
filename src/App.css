@@ -18,4 +18,5 @@
     font-size:1em;
     color:rgb(184, 184, 184);
     font-weight: 300;
+    user-select: none;
 }

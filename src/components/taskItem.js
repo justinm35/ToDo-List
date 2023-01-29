@@ -33,14 +33,16 @@ export default function TaskComp(props) {
                         <IconButton className="task--dropdown" onClick={() => setOpenState(!openState)} size="small">{openState? <ArrowDropDownIcon  fontSize="large"/> :<ArrowDropUpIcon  fontSize="large"/> }</IconButton>
                     </div>
                     <div className="task--comp-info-box" >
-                        {props.categoryName.map((data) =>{ return(<Chip style={{backgroundColor: data.color, color: 'white'}} className="task--tags"fontSize="medium" key={data.catId}label={data.name}/>)})}
+                        {props.categoryName.map((data) =>{ return(<Chip style={{backgroundColor: data.color, color: '#ffffff'}} className="task--tags"fontSize="medium" key={data.catId}label={data.name}/>)})}
                     </div>
                 </div>
                 <div className="task--drag-icon"><ReorderIcon size="small"dragControls={dragControls} /></div> 
                 <motion.div className="task--comp-popup" animate={openState ? maximized : minimized}>
-                {props.priority != '' && <div className="task--comp-priority">{props.priority == 'High' ? '!!!' :  props.priority == 'Medium' ? '!!' : '!' } {props.priority}</div>}
-                <p className="task--comp-date">{props.dueDate ? `Deadline: ${props.dueDate}` : "No Deadline"}</p>
-                        <p className="task--comp-desc">{props.description}</p> 
+                        <div className="task--comp-subject"><div>Title:</div><div><p>{props.title}</p></div></div>
+                        <div className="task--comp-subject"><div>Priority:</div><div><p>{props.priority}</p></div></div>
+                        {/* {props.priority != '' && <div className="task--comp-priority">{props.priority == 'High' ? '!!!' :  props.priority == 'Medium' ? '!!' : '!' } {props.priority}</div>} */}
+                        <div className="task--comp-subject"><div>Deadline:</div><div><p>{props.dueDate ? `${props.dueDate}` : "None"}</p></div></div>
+                        <div className="task--comp-subject"><div>Description: </div><div><p>{props.description}</p></div></div>
                         <IconButton  size="large"className="task--comp-trash" onClick={() => props.handleDelete(props.items.id)}><DeleteIcon color="disabled"/></IconButton>
                      </motion.div>
         </Reorder.Item>
