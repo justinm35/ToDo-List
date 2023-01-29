@@ -43,7 +43,7 @@ export default function TaskBar() {
         window.localStorage.setItem('prev', JSON.stringify(taskListData))
     }, [taskListData])
     function handleCatAdd() {
-        TaskListItem.categoryName && categoryList.some(category => category.name == TaskListItem.categoryName) == false &&
+        TaskListItem.categoryName && categoryList.some(category => category.name === TaskListItem.categoryName) === false &&
         setCategoryList(prevData => [...prevData,{catId: nanoid(3), color: randomColor(), name: TaskListItem.categoryName, state: true}])
         setTaskListItem((prev) => {return {...prev, categoryName:""}})
         console.log(TaskListItem)
@@ -52,16 +52,18 @@ export default function TaskBar() {
         const newCatList =  categoryList.map((item) => {if(item.catId === id){return{...item, state: !item.state}} else{return {...item}}})
         setCategoryList(() => newCatList)
     }
-
+    let [colorCount, setColorCount] = React.useState(0)
     const randomColor = () => {
-        const categoryColorArr = [red[300], purple[400], orange[400], pink[400], teal[400], blue[400], deepPurple[300], lightBlue[300], cyan[300] ]
-        console.log(categoryColorArr[3])
+        const categoryColorArr = [red[300], purple[300], orange[300], pink[300], teal[300], blue[300], deepPurple[300], lightBlue[300], cyan[300] ]
+        // let newColor = categoryColorArr[colorCount]
+        // console.log(colorCount + newColor)
+        // return newColor
         return categoryColorArr[parseInt(Math.random() * categoryColorArr.length)]
     }
     const [TaskListItem, setTaskListItem] = React.useState({id: "", checkedStatus: false, title: "", description: "", dueDate: "", priority: "", categoryColor: randomColor(), categoryName:""})
     
     function handleDeleteCompletedTask() {
-        const newData = taskListData.filter((item) => item.checkedStatus == false && item)
+        const newData = taskListData.filter((item) => item.checkedStatus === false && item)
         setTaskListData(newData)
     }
     function handleDelete(checkId) {
@@ -223,7 +225,7 @@ export default function TaskBar() {
                     }
         {/* Add task "+" button*/}
             {/* <motion.button whileTap={{ scale: 0.90 }} onClick={() => setIsFormVisible(x => !x)} className="task--add-btn"><motion.div animate={isFormVisible ? unRotated : rotated}>+</motion.div></motion.button> */}
-            <motion.div whileTap={{ scale: 0.90 }} onClick={() => setIsFormVisible(x => !x)} className="task--add-btn" animate={isFormVisible ? unRotated : rotated}>+</motion.div>
+            <motion.div whileTap={{ scale: 0.90 }} onClick={() => setIsFormVisible(x => !x)} className="task--add-btn" animate={isFormVisible ? unRotated : rotated}><AddIcon className="task--add-btn-child" sx={{ fontSize: 60 }}/></motion.div>
 
         </div>
     )
