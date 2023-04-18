@@ -1,3 +1,4 @@
+import Providers from './components/ui/Providers'
 import './globals.css'
 
 export const metadata = {
@@ -11,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html className="h-screen w-screen bg-slate-200 "lang="en">
+      <body className='h-screen w-screen bg-slate-200 '>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
